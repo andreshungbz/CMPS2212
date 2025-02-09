@@ -1,11 +1,11 @@
-// tasks_routes.ts
+// comments_routes.ts
 import { Express } from 'express';
-import { TaskController } from './tasks_controller';
+import { CommentController } from './comments_controller';
 
-export class TaskRoutes {
-  private baseEndPoint = '/api/tasks';
+export class CommentRoutes {
+  private baseEndPoint = '/api/comments';
   constructor(app: Express) {
-    const controller = new TaskController();
+    const controller = new CommentController();
     app
       .route(this.baseEndPoint)
       .get(controller.getAllHandler)

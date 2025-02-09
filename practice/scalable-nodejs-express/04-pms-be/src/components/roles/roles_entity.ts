@@ -1,4 +1,4 @@
-// projects_entity.ts
+// role_entity.ts
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -8,24 +8,18 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Projects {
+export class Roles {
   @PrimaryGeneratedColumn('uuid')
-  project_id: string;
+  role_id: string;
 
-  @Column({ length: 30, nullable: false, unique: true })
+  @Column({ length: 60, nullable: false, unique: true })
   name: string;
 
-  @Column({ length: 500 })
+  @Column({ length: 200 })
   description: string;
 
-  @Column('uuid', { array: true, default: [] })
-  user_ids: string[];
-
-  @Column()
-  start_time: Date;
-
-  @Column()
-  end_time: Date;
+  @Column({ type: 'text' })
+  rights: string;
 
   @CreateDateColumn()
   created_at: Date;

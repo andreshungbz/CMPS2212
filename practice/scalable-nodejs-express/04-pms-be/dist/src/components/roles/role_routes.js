@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectRoutes = void 0;
-const projects_controller_1 = require("./projects_controller");
-class ProjectRoutes {
-    baseEndPoint = '/api/projects';
+exports.RoleRoutes = void 0;
+const role_controller_1 = require("./role_controller");
+class RoleRoutes {
+    baseEndPoint = '/api/roles';
     constructor(app) {
-        const controller = new projects_controller_1.ProjectController();
+        const controller = new role_controller_1.RoleController();
         app
             .route(this.baseEndPoint)
             .get(controller.getAllHandler)
@@ -17,4 +17,4 @@ class ProjectRoutes {
             .delete(controller.deleteHandler);
     }
 }
-exports.ProjectRoutes = ProjectRoutes;
+exports.RoleRoutes = RoleRoutes;

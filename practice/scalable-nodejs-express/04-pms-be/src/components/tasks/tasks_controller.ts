@@ -1,5 +1,5 @@
-// users_controller.ts
-export class UserController {
+// tasks_controller.ts
+export class TaskController {
   public addHandler() {}
   public getAllHandler() {}
   public getDetailsHandler() {}

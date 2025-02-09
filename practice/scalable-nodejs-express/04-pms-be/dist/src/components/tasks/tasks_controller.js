@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserController = void 0;
-class UserController {
+exports.TaskController = void 0;
+class TaskController {
     addHandler() { }
     getAllHandler() { }
     getDetailsHandler() { }
     async updateHandler() { }
     async deleteHandler() { }
 }
-exports.UserController = UserController;
+exports.TaskController = TaskController;

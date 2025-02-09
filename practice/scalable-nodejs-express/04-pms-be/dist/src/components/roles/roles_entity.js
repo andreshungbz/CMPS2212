@@ -9,54 +9,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Users = void 0;
+exports.Roles = void 0;
 const typeorm_1 = require("typeorm");
-const roles_entity_1 = require("../roles/roles_entity");
-let Users = class Users {
-    user_id;
-    fullname;
-    username;
-    email;
-    password;
+let Roles = class Roles {
     role_id;
+    name;
+    description;
+    rights;
     created_at;
     updated_at;
 };
-exports.Users = Users;
+exports.Roles = Roles;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
     __metadata("design:type", String)
-], Users.prototype, "user_id", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ length: 50, nullable: true }),
-    __metadata("design:type", String)
-], Users.prototype, "fullname", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ length: 30, nullable: false, unique: true }),
-    __metadata("design:type", String)
-], Users.prototype, "username", void 0);
+], Roles.prototype, "role_id", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 60, nullable: false, unique: true }),
     __metadata("design:type", String)
-], Users.prototype, "email", void 0);
+], Roles.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: false }),
+    (0, typeorm_1.Column)({ length: 200 }),
     __metadata("design:type", String)
-], Users.prototype, "password", void 0);
+], Roles.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: false }),
-    (0, typeorm_1.ManyToOne)(() => roles_entity_1.Roles),
-    (0, typeorm_1.JoinColumn)({ name: 'role_id' }),
-    __metadata("design:type", Object)
-], Users.prototype, "role_id", void 0);
+    (0, typeorm_1.Column)({ type: 'text' }),
+    __metadata("design:type", String)
+], Roles.prototype, "rights", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
-], Users.prototype, "created_at", void 0);
+], Roles.prototype, "created_at", void 0);
 __decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
-], Users.prototype, "updated_at", void 0);
-exports.Users = Users = __decorate([
+], Roles.prototype, "updated_at", void 0);
+exports.Roles = Roles = __decorate([
     (0, typeorm_1.Entity)()
-], Users);
+], Roles);

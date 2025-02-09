@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectRoutes = void 0;
-const projects_controller_1 = require("./projects_controller");
-class ProjectRoutes {
-    baseEndPoint = '/api/projects';
+exports.CommentRoutes = void 0;
+const comments_controller_1 = require("./comments_controller");
+class CommentRoutes {
+    baseEndPoint = '/api/comments';
     constructor(app) {
-        const controller = new projects_controller_1.ProjectController();
+        const controller = new comments_controller_1.CommentController();
         app
             .route(this.baseEndPoint)
             .get(controller.getAllHandler)
@@ -17,4 +17,4 @@ class ProjectRoutes {
             .delete(controller.deleteHandler);
     }
 }
-exports.ProjectRoutes = ProjectRoutes;
+exports.CommentRoutes = CommentRoutes;
