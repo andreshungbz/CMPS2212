@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: blanchedalmond;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+label,
+input,
+button {
+  display: block;
+  margin-bottom: 1rem;
+}
+input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+button {
+  padding: 0.5rem;
+  cursor: pointer;
+}

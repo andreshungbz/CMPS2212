@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Submit a Message</h1>
+    <form method="POST" action="/guestbook">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "baby-server",
+  "version": "1.0.0",
+  "description": "Demo app",
+  "license": "ISC",
+  "author": "Dalwin D. Lewis",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

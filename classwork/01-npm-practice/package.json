@@ -1,0 +1,19 @@
+{
+  "name": "baby-server",
+  "version": "1.0.0",
+  "description": "Our first web app using the Express framework",
+  "license": "ISC",
+  "author": "Andres Hung",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
