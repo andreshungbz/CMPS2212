@@ -1,4 +1,4 @@
-import { retrieveMessages, addMessage } from '../../models/messageModel.js';
+import { retrieveMessages, addMessage } from '../models/messageModel.js';
 
 export const getHome = (req, res) => {
   res.render('guestbook', {
@@ -14,7 +14,7 @@ export const getGuestBook = (req, res) => {
   res.render('guestbook-submission', { title: 'Submit Message' });
 };
 
-export const postGuestBook = (req, res) => {
+export const postGuestBook = async (req, res) => {
   // get name and message from request using object destructuring syntax
   const { name, message } = req.body;
 
@@ -23,13 +23,22 @@ export const postGuestBook = (req, res) => {
     return res.status(400).res.send('Name and/or email is missing!\n');
   }
 
-  const newMessage = addMessage(name, message);
-  res.render('thankyou', {
-    title: 'Thank You',
-    ...newMessage,
-  });
+  try {
+    const newMessage = await addMessage(name, message);
+    res.render('thankyou', {
+      title: 'Thank You',
+      ...newMessage,
+    });
+  } catch (error) {
+    res.status(500).send('An error occurred during add message.');
+  }
 };
 
-export const getMessages = (req, res) => {
-  res.json(retrieveMessages());
+export const getMessages = async (req, res) => {
+  try {
+    const messages = await retrieveMessages();
+    res.json(messages);
+  } catch (error) {
+    res.status(500).send('An error occurred fetching messages.');
+  }
 };
